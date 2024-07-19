@@ -1,0 +1,4 @@
+name: PaperExplosionResist
+version: '${version}'
+main: me.cooleg.paperexplosionresist.PaperExplosionResist
+api-version: '1.20'
