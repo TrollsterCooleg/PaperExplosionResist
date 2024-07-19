@@ -16,9 +16,10 @@ public class ModifyExplosionResistance {
     static {
         try {
             for (Field field : Blocks.class.getFields()) {
+                if (field.getType() != Block.class) {continue;}
                 field.setAccessible(true);
                 net.minecraft.world.level.block.Block block = (Block) field.get(null);
-                getBlock.put(block.asItem().toString().toUpperCase(), block);
+                getBlock.put(field.getName(), block);
             }
         } catch (IllegalAccessException ex) {}
         try {
